@@ -3,26 +3,54 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./button": "./src/button.tsx",
-    "./card": "./src/card.tsx",
-    "./code": "./src/code.tsx"
+    ".": {
+      "import": "./dist/ui.mjs",
+      "require": "./dist/ui.umd.js"
+    }
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
-    "generate:component": "turbo gen react-component"
+    "build": "tsc -b && vite build",
+    "generate:component": "turbo gen react-component",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/addon-onboarding": "^8.3.5",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/builder-vite": "^8.3.5",
+    "@storybook/react": "^8.3.5",
+    "@storybook/react-vite": "^8.3.5",
+    "@storybook/test": "^8.3.5",
     "@turbo/gen": "^1.12.4",
-    "@types/node": "^20.11.24",
     "@types/eslint": "^8.56.5",
+    "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.3.2",
     "eslint": "^8.57.0",
-    "typescript": "^5.3.3"
+    "eslint-plugin-storybook": "^0.9.0",
+    "storybook": "^8.3.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.2.4"
   },
   "dependencies": {
-    "react": "^18.2.0"
+    "@dnd-kit/core": "^6.1.0",
+    "@dnd-kit/modifiers": "^7.0.0",
+    "@dnd-kit/sortable": "^8.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "autoprefixer": "^10.4.20",
+    "classnames": "^2.5.1",
+    "framer-motion": "^11.11.8",
+    "postcss": "^8.4.47",
+    "react": "^18.2.0",
+    "tailwindcss": "^3.4.13"
   }
 }
