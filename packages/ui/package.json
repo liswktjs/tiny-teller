@@ -3,14 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./button": "./src/button.tsx",
-    "./card": "./src/card.tsx",
-    "./code": "./src/code.tsx"
+    ".": {
+      "import": "./dist/ui.mjs",
+      "require": "./dist/ui.umd.js"
+    }
   },
   "scripts": {
-    "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -39,7 +38,8 @@
     "eslint-plugin-storybook": "^0.9.0",
     "storybook": "^8.3.5",
     "typescript": "^5.3.3",
-    "vite": "^5.4.8"
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.2.4"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.1.0",
